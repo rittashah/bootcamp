@@ -2,29 +2,41 @@ import os
 import csv
 
 # Path to collect data from the Resources folder
-
+graduation_path = os.path.join("..", "Resources", "graduation_data.csv")
 
 # Define the function and have it accept the 'state_data' as its sole parameter
 
+def print_percentages(state_data):
+    
+    state = str(state_data[0])
+    public_students = int(state_data[1])
+    public_graduates = int(state_data[2])
+    nonprofit_students = int(state_data[3])
+    nonprofit_graduates = int(state_data[4])
+    forprofit_students = int(state_data[5])
+    forprofit_graduates = int(state_data[6])
 
-# Find the total students
+    total_students = public_students + nonprofit_students + forprofit_students
+    total_graduates = public_graduates + nonprofit_graduates + forprofit_graduates
+    public_grad_rate = (public_graduates / public_students) * 100    
 
-# Find the total graduates
+    if nonprofit_students == 0:
+        nonprofit_grad_rate = 0
+    else:
+        nonprofit_grad_rate = (nonprofit_graduates / nonprofit_students) * 100
 
-# Find the public school graduation rate
+    if forprofit_students == 0:
+        forprofit_grad_rate = 0
+    else:
+        forprofit_grad_rate = (forprofit_graduates / forprofit_students) * 100
 
-# Remember that some states do not have nonprofit or forprofit private schools
-# Find the non-profit school graduation rate
+    # Calculate the overall graduation rate
+    overall_grad_rate = (total_graduates / total_students) * 100
 
-# Find the for-profit school graduation rate
-
-# Calculate the overall graduation rate
-
-# Print out the state's name and its graduation rates
-
+    print(overall_grad_rate)
 
 # Read in the CSV file
-with open(graduation_csv, 'r') as csvfile:
+with open(graduation_path, 'r') as csvfile:
 
     # Split the data on commas
     csvreader = csv.reader(csvfile, delimiter=',')

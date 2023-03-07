@@ -4,14 +4,14 @@ for _ in range(5):
     names.append(name)
 
 # @TODO: Use a list comprehension to create a list of lowercased names
-lowercased = ["YOUR CODE HERE!"]
+lowercased = [person_name.lower() for person_name in names]
 
 # @TODO: Use a list comprehension to create a list of title cased names
 # https://www.tutorialspoint.com/python/string_title.htm
-title cased = ["YOUR CODE HERE!"]
+titlecased = [person_name.title() for person_name in names]
 
-invitations = [
-    f"Dear {name}, please come to the wedding this Saturday!" for name in title cased]
+invitations = [f"Dear {name}, please come to the wedding this Saturday!" for name in titlecased]
+print(invitations)
 
 for invitation in invitations:
     print(invitation)
