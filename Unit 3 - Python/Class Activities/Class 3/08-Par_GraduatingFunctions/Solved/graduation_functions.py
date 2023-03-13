@@ -2,8 +2,8 @@ import os
 import csv
 
 # Path to collect data from the Resources folder
-graduation_csv = os.path.join('..', 'Resources', 'graduation_data.csv')
-
+#graduation_csv = os.path.join('..', 'Resources', 'graduation_data.csv')
+graduation_csv=r"Class Activities/Class 3/08-Par_GraduatingFunctions/Resources/graduation_data.csv"
 
 # Define the function and have it accept the 'state_data' as its sole parameter
 def print_percentages(state_data):

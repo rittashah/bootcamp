@@ -1,13 +1,7 @@
 
-city = 'Toronto'
-
-# myCity = []
-
-# for letter in city: 
-#     upper_letter = letter.upper()
-#     if upper_letter == 'O':
-#       myCity.append(upper_letter)
-
-myCity = [letter.upper() for letter in city if letter.upper() == 'O']
-
-print(myCity)
+myinformation={"myname":"ritta", "myage":"30",
+               "myhobbies":["swimming","reading","cooking"],
+               "mywakeuptime":{"monday":"5:0","tuesday":"7:00","wenday":"5:15"}}
+print(myinformation["myname"])
+print(myinformation["myhobbies"][1])
+print(myinformation["mywakeuptime"]["tuesday"])
